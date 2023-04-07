@@ -28,7 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             panel1 = new Panel();
+            timer1 = new System.Windows.Forms.Timer(components);
             SuspendLayout();
             // 
             // panel1
@@ -39,8 +41,14 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(721, 466);
             panel1.TabIndex = 0;
+            panel1.SizeChanged += panel1_SizeChanged;
             panel1.Click += panel1_Click;
             panel1.Paint += panel1_Paint;
+            // 
+            // timer1
+            // 
+            timer1.Interval = 15;
+            timer1.Tick += timer1_Tick;
             // 
             // Form1
             // 
@@ -56,5 +64,6 @@
         #endregion
 
         private Panel panel1;
+        private System.Windows.Forms.Timer timer1;
     }
 }
